@@ -1,39 +1,38 @@
 import asyncio
 
 # Pyrogram imports
+from pyrogram.types import Message
+from telethon import TelegramClient
 from pyrogram import Client, filters
+from pyrogram import Client as Client1
+from asyncio.exceptions import TimeoutError
+from telethon.sessions import StringSession
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import (
     ApiIdInvalid,
-    FloodWait,
-    PasswordHashInvalid,
-    PhoneCodeExpired,
-    PhoneCodeInvalid,
     PhoneNumberInvalid,
+    PhoneCodeInvalid,
+    PhoneCodeExpired,
     SessionPasswordNeeded,
+    PasswordHashInvalid
 )
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-
-# OldPyro imports
-from oldpyro import Client as OldClient
-from oldpyro.errors import (
-    ApiIdInvalid as OldApiIdInvalid,
-    PasswordHashInvalid as OldPasswordHashInvalid,
-    PhoneCodeExpired as OldPhoneCodeExpired,
-    PhoneCodeInvalid as OldPhoneCodeInvalid,
-    PhoneNumberInvalid as OldPhoneNumberInvalid,
-    SessionPasswordNeeded as OldSessionPasswordNeeded,
+from pyrogram.errors import (
+    ApiIdInvalid as ApiIdInvalid1,
+    PhoneNumberInvalid as PhoneNumberInvalid1,
+    PhoneCodeInvalid as PhoneCodeInvalid1,
+    PhoneCodeExpired as PhoneCodeExpired1,
+    SessionPasswordNeeded as SessionPasswordNeeded1,
+    PasswordHashInvalid as PasswordHashInvalid1
 )
-
-# Telethon imports
-from telethon import TelegramClient
 from telethon.errors import (
     ApiIdInvalidError,
-    PasswordHashInvalidError,
-    PhoneCodeExpiredError,
-    PhoneCodeInvalidError,
     PhoneNumberInvalidError,
+    PhoneCodeInvalidError,
+    PhoneCodeExpiredError,
     SessionPasswordNeededError,
+    PasswordHashInvalidError
 )
+
 from telethon.sessions import StringSession
 from telethon.tl.functions.channels import JoinChannelRequest
 
