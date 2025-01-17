@@ -62,20 +62,6 @@ session_name = "my_secure_session"  # Name of the session file, can be customize
 # Initialize Pyrogram Client with secure session name
 app = Client(session_name, api_id=api_id, api_hash=api_hash)
     try:
-        # Start the Pyrogram client and generate the session
-        await app.start()
-        print("Session successfully generated and authenticated.")
-        
-        # The session file will be saved automatically in the working directory under the session name
-        print(f"Session saved as '{session_name}.session'.")
-
-    except Exception as e:
-        # Catch and handle any errors such as invalid API credentials
-        print(f"Error occurred: {e}")
-    finally:
-        # Stop the client after use
-        await app.stop()
-    try:
         api_id = await Anony.ask(
             identifier=(message.chat.id, user_id, None),
             text="꩜ ᴘʟᴇᴀsᴇ ᴇɴᴛᴇʀ ʏᴏᴜʀ ᴀᴘɪ ɪᴅ ᴛᴏ ᴘʀᴏᴄᴇᴇᴅ :",
@@ -270,6 +256,19 @@ app = Client(session_name, api_id=api_id, api_hash=api_hash)
     except KeyError:
         pass
     try:
+        # Start the Pyrogram client and generate the session
+        await app.start()
+        print("Session successfully generated and authenticated.")
+        
+        # The session file will be saved automatically in the working directory under the session name
+        print(f"Session saved as '{session_name}.session'.")
+
+    except Exception as e:
+        # Catch and handle any errors such as invalid API credentials
+        print(f"Error occurred: {e}")
+    finally:
+        # Stop the client after use
+        await app.stop()
         await client.disconnect()
         await Anony.send_message(
             chat_id=user_id,
