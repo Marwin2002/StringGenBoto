@@ -1,27 +1,18 @@
 import asyncio
-
-# Pyrogram imports
-import asyncio
-from pyrogram import Client as PyrogramClient, filters
-from oldpyro import Client as OldPyroClient
-from oldpyro.errors import (
-    ApiIdInvalid as OldApiIdInvalid,
-    PasswordHashInvalid as OldPasswordHashInvalid,
-    PhoneCodeExpired as OldPhoneCodeExpired,
-    PhoneCodeInvalid as OldPhoneCodeInvalid,
-    PhoneNumberInvalid as OldPhoneNumberInvalid,
-    SessionPasswordNeeded as OldSessionPasswordNeeded,
-)
+from asyncio.exceptions import TimeoutError
+from pyrogram import Client, filters
 from pyrogram.errors import (
     ApiIdInvalid,
-    FloodWait,
     PasswordHashInvalid,
     PhoneCodeExpired,
     PhoneCodeInvalid,
     PhoneNumberInvalid,
     SessionPasswordNeeded,
+    PhoneNumberBanned,
+    PhonePasswordFlood,
+    AccessTokenInvalid,
 )
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from telethon import TelegramClient
 from telethon.errors import (
     ApiIdInvalidError,
@@ -30,8 +21,8 @@ from telethon.errors import (
     PhoneCodeInvalidError,
     PhoneNumberInvalidError,
     SessionPasswordNeededError,
+    AccessTokenInvalidError,
 )
-
 from telethon.sessions import StringSession
 from telethon.tl.functions.channels import JoinChannelRequest
 
