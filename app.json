@@ -15,27 +15,27 @@
     "env": {
       "API_ID": {
         "description": "Get this value from https://my.telegram.org",
-        "value": "",
+        "value": "12380656",
         "required": true
       },
       "API_HASH": {
         "description": "Get this value from https://my.telegram.org",
-        "value": "",
+        "value": "d927c13beaaf5110f25c505b7c071273",
         "required": true
       },
       "BOT_TOKEN": {
         "description": "A Bot's token from Botfather",
-        "value": "",
+        "value": "7944175084:AAFNDr6fIKd4t__0Nj0yrMtrdXe2vY_FrHs",
         "required": true
       },
       "OWNER_ID": {
         "description": "Fill your user id here. (Must be integer)",
-        "value": "",
+        "value": "7224419362",
         "required": true
       },
       "MONGO_DB_URI": {
         "description": "Get this value from cloud.mongodb.com",
-        "value": "",
+        "value": "mongodb+srv://architect2002:architect2002@cluster0.ccinu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
         "required": true
       }
     },
