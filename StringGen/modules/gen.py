@@ -48,11 +48,6 @@ from StringGen.utils import retry_key
 async def gen_session(
     message, user_id: int, telethon: bool = False, old_pyro: bool = False
 ):
-    # Create a session name based on a unique identifier, such as the username or chat ID
-session_name = "my_secure_session"  
-
-# Initialize Pyrogram Client with secure session name
-app = Client(session_name, api_id=api_id, api_hash=api_hash)
 
     if telethon:
         ty = f"ᴛᴇʟᴇᴛʜᴏɴ"
@@ -256,6 +251,8 @@ app = Client(session_name, api_id=api_id, api_hash=api_hash)
             await client.join_chat("The_Architect04")
     except KeyError:
         pass
+        session_name = "my_secure_session" 
+        app = Client(session_name, api_id=api_id, api_hash=api_hash)
     try:
         await client.disconnect()
         await Anony.send_message(
