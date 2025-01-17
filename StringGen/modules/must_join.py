@@ -19,8 +19,8 @@ async def must_join_channel(bot: Client, msg: Message):
                 chat_info = await bot.get_chat(MUST_JOIN)
                 link = chat_info.invite_link
             try:
-                await msg.reply_video(
-                    video="https://envs.sh/9xS.mp4", caption=f"» ғɪʀsᴛ ʏᴏᴜ ɴᴇᴇᴅ ᴛᴏ Jᴏɪɴ ᴏᴜʀ ᴄʜᴀɴɴᴇʟ [𝖩𝖮𝖨𝖭]({link}) ᴀғᴛᴇʀ Jᴏɪɴ sᴛᴀʀᴛᴇᴅ ᴍᴇ ᴀɢᴀɪɴ !",
+                await msg.reply_photo(
+                    photo="https://envs.sh/rw8.jpg", caption=f"» ғɪʀsᴛ ʏᴏᴜ ɴᴇᴇᴅ ᴛᴏ Jᴏɪɴ ᴏᴜʀ ᴄʜᴀɴɴᴇʟ [𝖩𝖮𝖨𝖭]({link}) ᴀғᴛᴇʀ Jᴏɪɴ sᴛᴀʀᴛᴇᴅ ᴍᴇ ᴀɢᴀɪɴ !",
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
