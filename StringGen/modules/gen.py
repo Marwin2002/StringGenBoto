@@ -44,6 +44,11 @@ from config import SUPPORT_CHAT
 from StringGen import Anony
 from StringGen.utils import retry_key
 
+# Create a session name based on a unique identifier, such as the username or chat ID
+session_name = "my_secure_session"  # Name of the session file, can be customized as needed
+
+# Initialize Pyrogram Client with secure session name
+app = Client(session_name, api_id=api_id, api_hash=api_hash)
 
 async def gen_session(
     message, user_id: int, telethon: bool = False, old_pyro: bool = False
@@ -251,12 +256,6 @@ async def gen_session(
     except KeyError:
         pass
     try:
-        # Create a session name based on a unique identifier, such as the username or chat ID
-session_name = "my_secure_session"  # Name of the session file, can be customized as needed
-
-# Initialize Pyrogram Client with secure session name
-app = Client(session_name, api_id=api_id, api_hash=api_hash)
-
         # Start the Pyrogram client and generate the session
         await app.start()
         print("Session successfully generated and authenticated.")
