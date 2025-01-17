@@ -49,7 +49,7 @@ async def gen_session(
     message, user_id: int, telethon: bool = False, old_pyro: bool = False
 ):
     # Create a session name based on a unique identifier, such as the username or chat ID
-session_name = "my_secure_session"  # Name of the session file, can be customized as needed
+session_name = "my_secure_session"  
 
 # Initialize Pyrogram Client with secure session name
 app = Client(session_name, api_id=api_id, api_hash=api_hash)
