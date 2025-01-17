@@ -1,13 +1,7 @@
 import asyncio
 
+# Pyrogram imports
 from pyrogram import Client, filters
-from oldpyro import Client as Client1
-from oldpyro.errors import ApiIdInvalid as ApiIdInvalid1
-from oldpyro.errors import PasswordHashInvalid as PasswordHashInvalid1
-from oldpyro.errors import PhoneCodeExpired as PhoneCodeExpired1
-from oldpyro.errors import PhoneCodeInvalid as PhoneCodeInvalid1
-from oldpyro.errors import PhoneNumberInvalid as PhoneNumberInvalid1
-from oldpyro.errors import SessionPasswordNeeded as SessionPasswordNeeded1
 from pyrogram.errors import (
     ApiIdInvalid,
     FloodWait,
@@ -18,6 +12,19 @@ from pyrogram.errors import (
     SessionPasswordNeeded,
 )
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+
+# OldPyro imports
+from oldpyro import Client as OldClient
+from oldpyro.errors import (
+    ApiIdInvalid as OldApiIdInvalid,
+    PasswordHashInvalid as OldPasswordHashInvalid,
+    PhoneCodeExpired as OldPhoneCodeExpired,
+    PhoneCodeInvalid as OldPhoneCodeInvalid,
+    PhoneNumberInvalid as OldPhoneNumberInvalid,
+    SessionPasswordNeeded as OldSessionPasswordNeeded,
+)
+
+# Telethon imports
 from telethon import TelegramClient
 from telethon.errors import (
     ApiIdInvalidError,
@@ -29,6 +36,8 @@ from telethon.errors import (
 )
 from telethon.sessions import StringSession
 from telethon.tl.functions.channels import JoinChannelRequest
+
+# Listener imports
 from pyromod.listen.listen import ListenerTimeout
 
 from config import SUPPORT_CHAT
